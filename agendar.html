@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendar cita — Veterinaria MACVET</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/panel.css" />
+</head>
+<body class="pagina-acceso">
+  <main class="acceso">
+    <div class="acceso-tarjeta" style="max-width:560px">
+      <div class="brand acceso-brand">
+        <div class="brand-mark"><svg class="ico-brand" viewBox="0 0 24 24" fill="currentColor"><ellipse cx="6" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="18" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="3" cy="12" rx="2" ry="2.6"/><ellipse cx="21" cy="12" rx="2" ry="2.6"/><path d="M12 10c-3.5 0-6 3-6 5.5 0 2 1.5 3.5 3.5 3.5 1 0 1.8-.4 2.5-.4s1.5.4 2.5.4c2 0 3.5-1.5 3.5-3.5 0-2.5-2.5-5.5-6-5.5z"/></svg></div>
+        <div>MACVET<small>Veterinaria en Milagro</small></div>
+      </div>
+      <h1>Agendar cita</h1>
+      <p class="ayuda">Llena los datos y nuestro equipo confirmará tu cita.</p>
+
+      <form id="form-cita" novalidate>
+        <div class="form-row">
+          <div class="form-group"><label for="dueno">Tu nombre *</label><input id="dueno" maxlength="120" autocomplete="name" required /></div>
+          <div class="form-group"><label for="telefono">Teléfono / WhatsApp *</label><input id="telefono" type="tel" maxlength="20" autocomplete="tel" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="mascota">Nombre de tu mascota *</label><input id="mascota" maxlength="80" required /></div>
+          <div class="form-group"><label for="tipo">Tipo</label><select id="tipo"><option>Perro</option><option>Gato</option><option>Otro</option></select></div>
+        </div>
+        <div class="form-group"><label for="raza">Raza (opcional)</label><input id="raza" maxlength="80" /></div>
+        <div class="form-row">
+          <div class="form-group"><label for="fecha">Fecha *</label><input id="fecha" type="date" required /></div>
+          <div class="form-group"><label for="hora">Hora *</label><select id="hora" required><option value="">Elige primero la fecha</option></select><small class="ayuda" id="ayuda-hora"></small></div>
+        </div>
+        <div class="form-group"><label for="servicio">Motivo *</label><select id="servicio"></select></div>
+        <div class="form-group"><label for="notas">Comentarios (opcional)</label><textarea id="notas" rows="3" maxlength="500"></textarea></div>
+        <!-- Campo trampa: las personas no lo ven; los programas que llenan formularios sí -->
+        <div style="position:absolute;left:-9999px" aria-hidden="true"><label>No llenar<input id="sitio-web" tabindex="-1" autocomplete="off" /></label></div>
+        <div class="form-error" id="error-cita" role="alert" hidden></div>
+        <button type="submit" class="btn btn-primary btn-lg" id="btn-cita" style="width:100%">Solicitar cita</button>
+      </form>
+      <div id="listo" hidden>
+        <h2>¡Solicitud enviada!</h2>
+        <p>Recibimos tu solicitud. Nuestro equipo la revisará y te confirmará por teléfono o WhatsApp.</p>
+        <p class="ayuda">Si es una urgencia, comunícate directamente con la clínica.</p>
+        <a class="btn btn-primary" href="index.html">Volver al sitio</a>
+      </div>
+      <p class="acceso-pie"><a href="index.html">← Volver al sitio</a></p>
+    </div>
+  </main>
+  <script src="js/vendor/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/agendar.js"></script>
+</body>
+</html>

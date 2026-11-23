@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veterinaria MACVET — Milagro, Ecuador</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="index">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark"><svg class="ico-brand" viewBox="0 0 24 24" fill="currentColor"><ellipse cx="6" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="18" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="3" cy="12" rx="2" ry="2.5"/><ellipse cx="21" cy="12" rx="2" ry="2.5"/><path d="M12 22c-2.5 0-5-2.5-6.5-5S3.5 12 5 10.5 8.5 9 10 11s1.5 3 2 3 .5-1 2-3 3.5-2 5-.5.5 4.5-1 7S14.5 22 12 22z"/></svg></div>
+        <div>
+          MACVET
+          <small>Veterinaria en Milagro</small>
+        </div>
+      </div>
+      <nav class="nav" id="mobile-nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo" data-seccion="equipo" hidden>Equipo</a>
+        <a href="#testimonios" data-seccion="testimonios" hidden>Opiniones</a>
+        <a href="#contacto" data-seccion="contacto" hidden>Contacto</a>
+      </nav>
+      <a href="agendar.html" class="btn btn-primary btn-nav-cta">Agendar cita</a>
+      <button class="mobile-menu-btn" id="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-landing">
+    <div class="container">
+      <div class="hero-landing-inner">
+        <div class="hero-landing-content">
+          <div class="eyebrow"><span class="dot"></span> Clinica veterinaria en Milagro</div>
+          <h1>Cuidamos a tus mascotas como <span>parte de la familia</span></h1>
+          <p class="lead">Medicina veterinaria integral con atencion personalizada, tecnologia moderna y un equipo comprometido con el bienestar animal.</p>
+          <div class="btn-row">
+            <a href="agendar.html" class="btn btn-primary btn-lg">Agendar cita</a>
+            <a href="#servicios" class="btn btn-ghost btn-lg">Ver servicios</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="section-light">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="section-eyebrow">Nuestros servicios</div>
+        <h2>Todo lo que tu mascota necesita en un solo lugar</h2>
+        <p>Atencion veterinaria completa con equipos modernos y profesionales capacitados.</p>
+      </div>
+      <div class="grid-3" id="lista-servicios"><p class="ayuda">Cargando servicios…</p></div>
+    </div>
+  </section>
+
+  <!-- Equipo -->
+  <section id="equipo" class="section-alt" hidden>
+    <div class="container">
+      <div class="section-head fade-up"><div class="section-eyebrow">Nuestro equipo</div><h2>Profesionales comprometidos con tu mascota</h2></div>
+      <div class="grid-2" id="lista-equipo"></div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="section-light" hidden>
+    <div class="container">
+      <div class="section-head fade-up"><div class="section-eyebrow">Testimonios</div><h2>Lo que dicen nuestros clientes</h2></div>
+      <div class="testimonial-track" id="lista-testimonios"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card fade-up">
+        <h2>Agenda la cita de tu mascota hoy</h2>
+        <p>Pide la cita de tu mascota en segundos. Nuestro equipo la confirma contigo.</p>
+        <div class="btn-row" style="justify-content:center">
+          <a href="agendar.html" class="btn btn-accent btn-lg">Agendar cita ahora</a>
+          <a href="#contacto" class="btn btn-ghost btn-lg">Contactarnos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section-alt" hidden>
+    <div class="container">
+      <div class="section-head fade-up"><div class="section-eyebrow">Contacto</div><h2>Visítanos o comunícate con nosotros</h2></div>
+      <div class="grid-3" id="lista-contacto"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-mark"><svg class="ico-brand" viewBox="0 0 24 24" fill="currentColor"><ellipse cx="6" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="18" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="3" cy="12" rx="2" ry="2.5"/><ellipse cx="21" cy="12" rx="2" ry="2.5"/><path d="M12 22c-2.5 0-5-2.5-6.5-5S3.5 12 5 10.5 8.5 9 10 11s1.5 3 2 3 .5-1 2-3 3.5-2 5-.5.5 4.5-1 7S14.5 22 12 22z"/></svg></div>
+            <div>MACVET<small>Veterinaria en Milagro</small></div>
+          </div>
+          <p>Cuidamos a tus mascotas con amor, profesionalismo y tecnologia. Tu confianza es nuestra mayor motivacion.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Acceso rapido</h4>
+          <a href="#servicios">Servicios</a>
+          <a href="#equipo" data-seccion="equipo" hidden>Equipo</a>
+          <a href="#testimonios" data-seccion="testimonios" hidden>Opiniones</a>
+          <a href="#contacto" data-seccion="contacto" hidden>Contacto</a>
+        </div>
+        <div class="footer-links">
+          <h4>Clínica</h4>
+          <a href="agendar.html">Agendar cita</a>
+          <a href="login.html">Acceso del personal</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Veterinaria MACVET — Milagro, Ecuador. Desarrollado por HianStudios.</p>
+      </div>
+    </div>
+  </footer>
+
+    <script src="js/vendor/supabase.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/publico.js"></script>
+</body>
+</html>
