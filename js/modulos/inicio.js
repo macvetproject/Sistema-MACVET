@@ -8,15 +8,11 @@
     icono: MV.ico("M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"),
     async render(el, { perfil }) {
       const hoy = fmt.hoy();
-      const cuenta = (q) => q.then((r) => { if (r.error) throw r.error; return r.count ?? 0; });
-      const [citasHoy, pendientes, web, clientes, mascotas, prox] = await Promise.all([
-        cuenta(sb.from("citas").select("id", { count: "exact", head: true }).eq("fecha", hoy).neq("estado", "cancelada")),
-        cuenta(sb.from("citas").select("id", { count: "exact", head: true }).eq("estado", "pendiente").gte("fecha", hoy)),
-        cuenta(sb.from("citas").select("id", { count: "exact", head: true }).eq("origen", "web").eq("estado", "pendiente").gte("fecha", hoy)),
-        cuenta(sb.from("clientes").select("id", { count: "exact", head: true }).eq("activo", true)),
-        cuenta(sb.from("mascotas").select("id", { count: "exact", head: true }).eq("activo", true)),
+      const [resumen, prox] = await Promise.all([
+        sb.rpc("resumen_inicio", { p_hoy: hoy }).then((r) => { if (r.error) throw r.error; return r.data || {}; }),
         consulta(sb.from("citas").select("id,fecha,hora,dueno,nombre_mascota,servicio,estado").gte("fecha", hoy).neq("estado", "cancelada").order("fecha").order("hora").limit(8)),
       ]);
+      const { citas_hoy: citasHoy = 0, pendientes = 0, web_pendientes: web = 0, clientes = 0, mascotas = 0 } = resumen;
       const stat = (clase, etq, n, nota) => `<div class="stat ${clase}"><div class="label">${esc(etq)}</div><div class="num">${n.toLocaleString("es-EC")}</div><div class="delta">${esc(nota)}</div></div>`;
       const filas = prox.data.map((c) => `<tr><td>${fmt.fecha(c.fecha)}</td><td>${fmt.hora(c.hora)}</td><td>${esc(c.dueno)}</td><td>${esc(c.nombre_mascota || "—")}</td><td>${esc(c.servicio)}</td><td>${MV.estadoCita(c.estado)}</td></tr>`).join("");
       el.innerHTML = `<div class="page-head"><div><h1>Hola, ${esc(perfil.nombre.split(" ")[0])}</h1><p>Resumen de la clínica de hoy, ${fmt.fecha(hoy)}.</p></div></div>
