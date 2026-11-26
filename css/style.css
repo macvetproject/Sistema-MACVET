@@ -1132,7 +1132,7 @@ body[data-theme="dark"] .thermal-receipt { color: #e0e0e0; }
 /* ---------- Print ---------- */
 @media print {
   .sidebar, .topbar, .toast, .modal-overlay, .btn, .filter-bar, .chat-mascot, .btn-mic,
-  .floating-chat-btn, .floating-chat-panel, .custom-notif { display: none !important; }
+  .floating-chat-btn, .floating-chat-panel, .custom-notif, .page-head, .chips { display: none !important; }
   .app-shell { display: block; }
   .main { padding: 0; }
   .thermal-receipt { color: #000 !important; }
